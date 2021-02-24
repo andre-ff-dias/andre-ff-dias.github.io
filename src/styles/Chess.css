@@ -40,8 +40,9 @@
 .piece-container:hover{
     cursor: grab;    
 }
-
-
-.piece {
+.piece-preview {
+    cursor: pointer;
+}
+.chess-piece {
     height: 70%;
 }
