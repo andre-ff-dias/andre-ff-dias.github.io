@@ -1,12 +1,13 @@
 import { React, useEffect, useState } from 'react';
 import '../styles/Chess.css';
-import { gameSubject } from '../components/chess/Game';
+import { gameSubject, initGame } from '../components/chess/Game';
 import Board from '../components/chess/Board';
 
 function Chess() {
     const [board, setBoard] = useState([]);
 
     useEffect(() => {
+        initGame();
         const subscribe = gameSubject.subscribe( game => setBoard(game.board));
         return () => subscribe.unsubscribe();
     }, []);

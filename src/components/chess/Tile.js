@@ -1,23 +1,36 @@
-import React from 'react';
-import Piece from './Piece';
+import { React, useEffect, useState } from 'react';
 import { useDrop } from 'react-dnd';
-import { move } from './Game';
+import { handleMove, gameSubject } from './Game';
+import Piece from './Piece';
+import Promote from './Promote';
 
 function Tile({piece, black, position}) {
     //console.log(piece);
+    const [promotion, setPromotion] = useState(null);
     const bgClass = black ? 'black-tile' : 'white-tile';
 
     const [ , drop] = useDrop({
         accept: 'piece',
         drop: (item) => {
             //console.log(item);
-            move(item.position, position);
+            handleMove(item.position, position);
         }
     });
 
+    useEffect(() => {
+        const subscribe = gameSubject.subscribe(({pendingPromotion}) => 
+            pendingPromotion && pendingPromotion.to === position ? setPromotion(pendingPromotion) : setPromotion(null)
+        );
+        return () => subscribe.unsubscribe();
+    }, [position])
+
     return (
         <div className={bgClass} ref={drop}>
-            { piece && <Piece piece={piece} position={position}/>}
+            {promotion ? (
+                <Promote promotion={promotion}/>
+            ) : piece ? (
+                <Piece piece={piece} position={position}/> 
+            ): null}
         </div>
     );    
 }
