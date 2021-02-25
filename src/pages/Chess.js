@@ -5,8 +5,9 @@ import Board from '../components/chess/Board';
 
 function Chess() {
     const [board, setBoard] = useState([]);
-    const [isGameOver, setIsGameOver] = useState(false);
+    const [isGameOver, setIsGameOver] = useState();
     const [result, setResult] = useState();
+    const [turn, setTurn] = useState();
 
     useEffect(() => {
         initGame();
@@ -14,14 +15,19 @@ function Chess() {
             setBoard(game.board)
             setIsGameOver(game.isGameOver)
             setResult(game.result)
-            //setTurn(game.turn)
+            setTurn(game.turn)
           })
         return () => subscribe.unsubscribe()
     }, []);
 
     return (
         <div className="Chess">
-            {isGameOver && (
+            { turn && !isGameOver && (
+                <h2 className="game-status">
+                    {turn === 'w' ? 'White turn' : 'Black turn'}
+                </h2>
+            )}
+            { isGameOver && (
                 <h2 className="game-status">GAME OVER
                     <button className="new-game-btn" onClick={resetGame}>
                         <span>
@@ -31,9 +37,9 @@ function Chess() {
                 </h2>
             )}
             <div className="board-container">
-                <Board board={board}/>
+                <Board board={board} turn={turn}/>
             </div>
-            {result && (
+            { result && (
                 <p className="game-status">
                     {result}
                 </p>

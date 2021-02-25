@@ -62,6 +62,7 @@
     font-family: sans-serif;
     padding: 15px;
     color: whitesmoke;
+    text-transform: uppercase;
 }
 
 .new-game-btn {
