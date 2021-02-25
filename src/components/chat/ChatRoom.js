@@ -36,9 +36,9 @@ function ChatRoom({firestore, auth}) {
                 {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} auth={auth}/>)}
                 <span ref={dummy}></span>
             </main>
-            <form onSubmit={sendMessage}>
-                <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
-                <button type="submit" disabled={!formValue}>🕊️</button>
+            <form onSubmit={sendMessage} className="chat-form">
+                <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" className="chat-input"/>
+                <button type="submit" disabled={!formValue} className="chat-btn">🕊️</button>
             </form>
         </>
     );

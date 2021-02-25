@@ -4,7 +4,7 @@ import 'firebase/auth';
 
 function SignOut({auth}) {
     return (
-        <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+        <button className="chat-btn sign-out" onClick={() => auth.signOut()}>Sign Out</button>
     );
 }
 

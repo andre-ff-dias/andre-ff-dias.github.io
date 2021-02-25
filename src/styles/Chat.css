@@ -46,7 +46,7 @@ main::-webkit-scrollbar-thumb {
     background: #6649b8;
 }
 
-form {
+.chat-form{
     height: 10vh;
     position: fixed;
     bottom: 0;
@@ -57,12 +57,12 @@ form {
     font-size: 1.5rem;
 }
 
-form button {
+.chat-form button {
     width: 20%;
     background-color: rgb(56, 56, 143);
 }
 
-input {
+.chat-input {
     line-height: 1.5;
     width: 100%;
     font-size: 1.5rem;
@@ -73,7 +73,7 @@ input {
     padding: 0 10px;
 }
 
-button {
+.chat-btn {
     background-color: #282c34;
     /* Green */
     border: none;
@@ -86,7 +86,7 @@ button {
     font-size: 1.25rem;
 }
 
-button:disabled {
+.chat-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
 }
