@@ -16,13 +16,26 @@ function Tile({piece, black, position}) {
             handleMove(item.position, position);
         }
     });
-
+    
     useEffect(() => {
-        const subscribe = gameSubject.subscribe(({pendingPromotion}) => 
-            pendingPromotion && pendingPromotion.to === position ? setPromotion(pendingPromotion) : setPromotion(null)
-        );
-        return () => subscribe.unsubscribe();
-    }, [position])
+        const subscribe = gameSubject.subscribe( game =>{
+            //console.log(game);
+            try{
+                if (game.pendingPromotion.to === position) {
+                    setPromotion(game.pendingPromotion);
+                }
+                else{
+                    setPromotion(null);
+                }
+            }
+            catch{
+                //console.log('When game.pendingPromotion is undefined');
+                setPromotion(null);
+            }
+            
+        })
+        return () => subscribe.unsubscribe()
+      }, [position]);
 
     return (
         <div className={bgClass} ref={drop}>

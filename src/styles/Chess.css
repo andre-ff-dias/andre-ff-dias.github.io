@@ -55,3 +55,21 @@
 .promote-cursor {
     cursor: pointer;
 }
+
+.game-status {
+    text-orientation: upright;
+    writing-mode: vertical-lr;
+    font-family: sans-serif;
+    padding: 15px;
+    color: whitesmoke;
+}
+
+.new-game-btn {
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgb(63, 63, 63);
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+    padding: 10px;
+    color: whitesmoke;
+}
