@@ -10,3 +10,10 @@
   justify-content: center;
   background-color: rgb(34, 34, 34);
 }
+
+.Chat {
+  text-align: center;
+  max-width: 728px;
+  margin: 0 auto;
+  background-color: #282c34;
+}
