@@ -17,3 +17,9 @@
   margin: 0 auto;
   background-color: #282c34;
 }
+
+.Todo {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+}
