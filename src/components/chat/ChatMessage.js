@@ -8,7 +8,7 @@ function ChatMessage({message, auth}) {
     return (
         <>
             <div className={`message ${messageClass}`}>
-                <img src={photoURL || 'https://avatars.dicebear.com/4.5/api/gridy/example.svg'} alt="bot_img"/>
+                <img src={photoURL || 'https://avatars.dicebear.com/4.5/api/gridy/example.svg'} alt="bot_img" className="chat-user-pic"/>
                 <p>{text}</p>
             </div>
         </>
