@@ -39,6 +39,13 @@ function Chess() {
             <div className="board-container">
                 <Board board={board} turn={turn}/>
             </div>
+            { !isGameOver && (
+                <button className="new-game-btn" onClick={resetGame}>
+                    <span>
+                        Restart Game
+                    </span>
+                </button>
+            )}
             { result && (
                 <p className="game-status">
                     {result}
