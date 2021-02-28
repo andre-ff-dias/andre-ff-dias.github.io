@@ -1,13 +1,17 @@
-.board-container {
+.board {
     width: 640px;
     height: 640px;
-}
-
-.board {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-wrap: wrap;
+}
+
+.chess-tab {
+    width: 15rem;
+    height: 640px;
+    padding: 5px;
+    display: grid;
+    place-content: center;
+    background-color: rgb(34, 34, 34);
 }
 
 .board .tile {
@@ -66,12 +70,34 @@
 }
 
 .new-game-btn {
-    margin-top: 20px;
-    margin-left: 10px;
     cursor: pointer;
     background-color: rgb(63, 63, 63);
     border: 2px solid whitesmoke;
     border-radius: 10px;
     padding: 10px;
     color: whitesmoke;
+}
+
+.chess-turn .icon-container-black {
+    display: grid;
+    place-content: center;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid #000;
+}
+
+.chess-turn .icon-container-white {
+    display: grid;
+    place-content: center;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    background-color: #000;
+    border: 5px solid #fff;
+}
+
+.chess-turn .icon {
+    font-size: 5rem;
 }

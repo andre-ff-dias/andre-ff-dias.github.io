@@ -1,7 +1,9 @@
 import { React, useEffect, useState } from 'react';
 import '../styles/Chess.css';
-import { gameSubject, initGame, resetGame } from '../components/chess/Game';
+import { gameSubject, initGame } from '../components/chess/Game';
 import Board from '../components/chess/Board';
+import RightTab from '../components/chess/tabs/RightTab';
+import LeftTab from '../components/chess/tabs/LeftTab';
 
 function Chess() {
     const [board, setBoard] = useState([]);
@@ -22,35 +24,9 @@ function Chess() {
 
     return (
         <div className="Chess">
-            { turn && !isGameOver && (
-                <h2 className="game-status">
-                    {turn === 'w' ? 'White turn' : 'Black turn'}
-                </h2>
-            )}
-            { isGameOver && (
-                <h2 className="game-status">GAME OVER
-                    <button className="new-game-btn" onClick={resetGame}>
-                        <span>
-                            NEW GAME
-                        </span>
-                    </button>
-                </h2>
-            )}
-            <div className="board-container">
-                <Board board={board} turn={turn}/>
-            </div>
-            { !isGameOver && (
-                <button className="new-game-btn" onClick={resetGame}>
-                    <span>
-                        Restart Game
-                    </span>
-                </button>
-            )}
-            { result && (
-                <p className="game-status">
-                    {result}
-                </p>
-            )}
+            <LeftTab isGameOver={isGameOver} turn={turn} />
+            <Board board={board} turn={turn}/>
+            <RightTab isGameOver={isGameOver} result={result} />
         </div>
     );
 }
