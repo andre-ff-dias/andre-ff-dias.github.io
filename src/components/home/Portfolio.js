@@ -10,8 +10,8 @@ function Portfolio() {
             <div className="home-container">
                 {PortfolioData.map((item, index) => {
                     return (
-                        <Link to={item.path}>
-                            <PortfolioCard item={item} key={index} />
+                        <Link to={item.path} key={index} >
+                            <PortfolioCard item={item} />
                         </Link>);
                 })}
             </div>
