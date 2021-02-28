@@ -11,7 +11,7 @@ function Promote({promotion: {from, to, color}}) {
                 promotionPieces.map((piece, index) => (
                     <div key={index} className="promote-tile">
                         <div className="piece-container" style={{backgroundColor: bgColors[index % 3]}} onClick={()=>move(from, to, piece)}>
-                            <img src={`assets/images/${piece}_${color}.png`} alt="promotion" className="chess-piece promote-cursor"/>
+                            <img src={`assets/images/chess/${piece}_${color}.png`} alt="promotion" className="chess-piece promote-cursor"/>
                         </div>
                     </div>
                 ))

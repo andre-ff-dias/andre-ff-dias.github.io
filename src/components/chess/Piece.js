@@ -13,7 +13,7 @@ function Piece({piece: {type, color}, position}) {
         }
     });
 
-    const pieceImg = `assets/images/${type}_${color}.png`;
+    const pieceImg = `assets/images/chess/${type}_${color}.png`;
 
     return (
         <>
