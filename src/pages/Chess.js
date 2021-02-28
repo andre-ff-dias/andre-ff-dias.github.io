@@ -25,7 +25,9 @@ function Chess() {
     return (
         <div className="Chess">
             <LeftTab isGameOver={isGameOver} turn={turn} />
-            <Board board={board} turn={turn}/>
+            <div className="board-container">
+                <Board board={board} turn={turn}/>
+            </div>
             <RightTab isGameOver={isGameOver} result={result} />
         </div>
     );
