@@ -1,0 +1,33 @@
+.about {
+    text-align: center;
+}
+
+.portfolio {
+    text-align: center;
+}
+
+.home-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
+    justify-content: center; 
+}
+
+.home-container a {
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.home-card {
+    width: 18rem;
+}
+
+.home-card img {
+    width: 17.9rem;    
+}
+
+.home-card p {
+    color: black;
+}

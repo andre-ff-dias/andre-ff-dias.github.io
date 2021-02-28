@@ -23,3 +23,7 @@
   display: grid;
   place-content: center;
 }
+
+.Home {
+  min-height: 100vh;
+}
