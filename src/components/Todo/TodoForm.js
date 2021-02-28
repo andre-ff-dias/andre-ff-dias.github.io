@@ -23,7 +23,7 @@ function Form({onSubmit, edit}) {
     };
 
     return (
-        <form className="todo-form" onSubmit={handleSubmit}>
+        <form className="todo-form" onSubmit={handleSubmit} autocomplete="off">
             { edit ? (
                 <>
                 <input placeholder='Update your item' value={input} onChange={handleChange} name='text' ref={inputRef} className='todo-input edit'/>
