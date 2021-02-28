@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-function Form({onSubmit, edit}) {
+function Form({onSubmit, edit, todos}) {
     const [input, setInput] = useState(edit ? edit.value : '');
     const inputRef = useRef(null);
     useEffect(() => {
@@ -13,7 +13,7 @@ function Form({onSubmit, edit}) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        
+
         onSubmit({
             id: Math.floor(Math.random()*10000),
             text: input
@@ -23,7 +23,7 @@ function Form({onSubmit, edit}) {
     };
 
     return (
-        <form className="todo-form" onSubmit={handleSubmit} autocomplete="off">
+        <form className="todo-form" onSubmit={handleSubmit} autoComplete="off">
             { edit ? (
                 <>
                 <input placeholder='Update your item' value={input} onChange={handleChange} name='text' ref={inputRef} className='todo-input edit'/>
