@@ -4,6 +4,7 @@ import Chess from './pages/Chess';
 import Chat from './pages/Chat';
 import TodoList from './pages/TodoList'
 import Sidebar from './components/sidebar/Sidebar';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Router>
         <Sidebar />
         <Switch>
+          <Route path='/' exact component={Home}/>
           <Route path='/chess' exact component={Chess}/>
           <Route path='/chat' exact component={Chat}/>
           <Route path='/todo' exact component={TodoList}/>
