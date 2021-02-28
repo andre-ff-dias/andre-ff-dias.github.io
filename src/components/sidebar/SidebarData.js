@@ -1,8 +1,8 @@
 import React from 'react';
 import * as FaIcons from 'react-icons/fa';
-import * as IoIcons from 'react-icons/io';
 import * as AiIcons from 'react-icons/ai';
 import * as RiIcons from 'react-icons/ri';
+import * as IoIcons from "react-icons/io5";
 
 export const SidebarData = [
     {
@@ -12,7 +12,7 @@ export const SidebarData = [
     },
     {
         title: 'Portfolio',
-        path: '',
+        path: '#',
         icon: <IoIcons.IoFolderOpenSharp />,
         iconClosed: <RiIcons.RiArrowDownSFill />,
         iconOpened: <RiIcons.RiArrowUpSFill />,
