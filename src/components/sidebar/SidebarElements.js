@@ -50,6 +50,8 @@ export const SidebarLink = styled(Link)`
         background: #252831;
         border-left: 4px solid #632ce4;
         cursor: pointer;
+        text-decoration: none;
+        color: hotpink;
     }
 `;
 
@@ -68,6 +70,8 @@ export const DropdownLink = styled(Link)`
     font-size: 18px;
     &:hover {
         background: #632ce4;
+        text-decoration: none;
         cursor: pointer;
+        color: #e37fb1;
     }
 `;
