@@ -5,7 +5,7 @@ import Chat from './pages/Chat';
 import TodoList from './pages/TodoList'
 import Sidebar from './components/sidebar/Sidebar';
 import Home from './pages/Home';
-import Footbar from './components/footbar/Footbar';
+//import Footbar from './components/footbar/Footbar';
 
 function App() {
   return (
@@ -18,7 +18,6 @@ function App() {
           <Route path='/chat' exact component={Chat}/>
           <Route path='/todo' exact component={TodoList}/>
         </Switch>
-        <Footbar />
       </Router>
     </div>
   );
