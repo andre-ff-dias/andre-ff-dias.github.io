@@ -34,6 +34,6 @@ const Sidebar = () => {
       </IconContext.Provider>
     </>
   );
-};
+}
 
 export default Sidebar;
