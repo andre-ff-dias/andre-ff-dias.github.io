@@ -1,0 +1,36 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  height: 50px;
+  width: 100%;
+  background-color: #fff;
+  border-width: 5px;
+  border-radius: 25px 25px 0px 0px;
+  border-color: #5a5a5a;
+  border-bottom-style: solid;
+}
+
+.btns {
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  left: 50px;
+}
+
+.btn {
+  height: 51px;
+  width: 160px;
+  align-items: center;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100%;
+}
+
+.btn:hover {
+  background-color: #171717;
+  color: #fff;
+}
+
+.btn-txt {
+  line-height: 50px;
+}
