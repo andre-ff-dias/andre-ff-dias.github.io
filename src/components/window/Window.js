@@ -1,13 +1,16 @@
 import React from "react";
-import ReadMe from "../readme/ReadMe";
 import Navbar from "../navbar/Navbar";
+import { FileData } from "../file/FileData";
 import "./Window.css";
+import File from "../file/File";
 
 function Window() {
   return (
-    <div className="window">
+    <div className="main-window" id="teste">
       <Navbar />
-      <ReadMe />
+      {FileData.map((item, index) => {
+        return <File item={item} key={index} />;
+      })}
     </div>
   );
 }
