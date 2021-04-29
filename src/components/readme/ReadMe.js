@@ -1,38 +1,30 @@
-import React, { useState } from "react";
-import { GoFileBinary } from "react-icons/go";
-import { IconContext } from "react-icons/lib";
-import Font from "react-font";
+import React from "react";
+import Draggable from "react-draggable";
 import "./ReadMe.css";
 
-function ReadMe() {
-  const [fileOpen, setFile] = useState(false);
-
-  const handleFileVisability = () => {
-    setFile(!fileOpen);
-  };
-
-  const handleDoubleClick = () => {
-    if (!fileOpen) {
-      handleFileVisability();
-    }
-  };
-
+function ReadMe({ handler }) {
   return (
     <div className="readme">
-      <div className="file" onDoubleClick={handleDoubleClick}>
-        <IconContext.Provider value={{ color: "white", size: "75px" }}>
-          <GoFileBinary />
-        </IconContext.Provider>
-        <br />
-        <Font className="name" family="Press Start 2P">
-          readme.md
-        </Font>
-      </div>
-      {fileOpen === true ? (
-        <div className="file-window" onClick={handleFileVisability}>
-          Something about me
+      <Draggable
+        handle="#handle"
+        bounds={{ top: -25, left: -285, right: 285, bottom: 85 }}
+      >
+        <div className="readme-window window">
+          <div class="title-bar" id="handle">
+            <div class="title-bar-text">README.MD</div>
+            <div class="title-bar-controls">
+              <button
+                aria-label="Close"
+                onClick={handler}
+                className="window-btn"
+              ></button>
+            </div>
+          </div>
+          <div class="window-body">
+            <p>There's so much room for activities!</p>
+          </div>
         </div>
-      ) : null}
+      </Draggable>
     </div>
   );
 }
